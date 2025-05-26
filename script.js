@@ -9,19 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   let currentIndex = 0;
-
   const output = document.getElementById("fact-output");
 
   output.addEventListener("click", () => {
     output.textContent = facts[currentIndex];
     currentIndex = (currentIndex + 1) % facts.length;
+    output.style.transform = "scale(1.05)";
+    setTimeout(() => {
+      output.style.transform = "scale(1)";
+    }, 150);
   });
-
-  // 드래깅 방지
-  output.style.userSelect = "none";
-  output.style.webkitUserSelect = "none";
-  output.style.msUserSelect = "none";
-  output.style.MozUserSelect = "none";
 
   // 시간대에 따른 인사말 출력
   const greetingElement = document.getElementById("greeting");
