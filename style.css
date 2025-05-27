@@ -10,7 +10,10 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #8be3f7, #64cfd3);
+    background-image: url("header.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
     color: white;
     padding: 2.5rem 1rem;
     text-align: center;
