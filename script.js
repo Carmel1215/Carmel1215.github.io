@@ -1,11 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const facts = [
         "저는 C#을 제일 좋아해요!",
-        "버스보다 지하철을 더 좋아한다.",
-        "C#이 제일 편하다.",
-        "음악 들을 때는 항상 이어폰보다 헤드폰.",
-        "디버깅이 제일 재밌다.",
-        "내 책상은 항상 정리돼 있다...고 믿고 싶다."
     ];
 
     let currentIndex = 0;
