@@ -79,6 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 typingTarget.classList.remove("neon-off");
                 typingTarget.classList.add("neon-on");
+                revealNavItems();
+                revealSections();
             }
         }
 
@@ -86,4 +88,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     typeCharacter();
+
+    function revealNavItems() {
+        const navItems = document.querySelectorAll("nav li");
+
+        navItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add("visible");
+            }, index * 300); // 300ms 간격으로 하나씩 등장
+        });
+    }
+
+    function revealSections() {
+        const sections = [
+            document.getElementById("about"),
+            document.getElementById("projects"),
+            document.getElementById("contact"),
+            document.getElementById("fun-facts"),
+        ];
+
+        sections.forEach((sections, index) => {
+            setTimeout(() => {
+                sections.classList.add("visible");
+            }, 400 * index);
+        });
+    }
 });
