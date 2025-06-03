@@ -13,6 +13,19 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  display: inline-block;
+  color: #ff00ff;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 5px #ff00ff;
+  transition: text-shadow 0.3s;
+}
+
+a:hover {
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
 /* 2. 타이핑 애니메이션 */
 .neon-on {
   color: #39ff14;
@@ -70,8 +83,7 @@ section h2 {
 }
 
 section p,
-section li,
-section a {
+section li {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #f0f0f0;
@@ -105,18 +117,6 @@ nav li {
 nav li.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-nav a {
-  color: #ff00ff;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 0 0 5px #ff00ff;
-  transition: text-shadow 0.3s;
-}
-
-nav a:hover {
-  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
 }
 
 /* 5. 리스트 */
@@ -159,4 +159,41 @@ footer {
 @keyframes flicker {
   0%, 19%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
   20%, 24%, 55% { opacity: 0.4; }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.project-card p {
+  margin: 0.5rem 0;
+  color: #f0f0f0;
+}
+
+.project-card .stack {
+  font-size: 0.95rem;
+  color: #ccc;
+  font-style: italic;
 }
