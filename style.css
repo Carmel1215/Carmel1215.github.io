@@ -39,9 +39,7 @@ body {
 /* 3. 섹션 스타일 */
 section {
   width: 100%;
-  max-width: 960px;
-  padding: 4rem 2rem;
-  margin: 0 auto 2rem;
+  padding: 4rem 2rem; /* 좌우 여백 최소화 */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -50,6 +48,8 @@ section {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  text-align: left;
+  margin: 0; /* 가운데 정렬용 margin 제거 */
 }
 
 section.visible {
@@ -134,20 +134,19 @@ footer {
 
 /* 7. fact 출력창 */
 #fact-output {
-  margin-top: 2rem;
+  display: block;
+  width: max-content;
+  margin: 2rem auto; /* 위아래 여백 + 좌우 중앙 */
+  padding: 1rem 2rem;
+  font-style: italic;
   background-color: #000;
   color: #ffcc00;
-  padding: 1rem 2rem;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 0 10px #ffcc00;
   text-shadow: 0 0 6px #ffcc00;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 1.1rem;
   cursor: pointer;
-  animation: flicker 2s infinite;
 }
 
 @keyframes flicker {
