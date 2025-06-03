@@ -11,12 +11,6 @@ body {
 
 /* 2. 타이핑 애니메이션 */
 
-#typing-target {
-    color: #f0f0f0;
-    text-shadow: none;
-    transition: all 0.2s ease-in-out;
-}
-
 .neon-on {
     color: #39ff14;
     text-shadow:
@@ -24,12 +18,13 @@ body {
         0 0 10px #39ff14,
         0 0 20px #39ff14,
         0 0 40px #39ff14;
+    transition: all 0.15s ease-in-out;
 }
 
-#typing-target.neon-off:not(.neon-on) {
-    color: #000;
+.neon-off {
+    color: #0a0a0a;
     text-shadow: none;
-    opacity: 0.1;
+    transition: all 0.15s ease-in-out;
 }
 
 /* 깜빡이는 애니메이션 */

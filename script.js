@@ -52,31 +52,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function startBlinking() {
         let blinkCount = 0;
-        const totalBlinks = 16; // 4회 깜빡임 (on/off)
-        let delay = 300;
+        const maxBlinks = 10;
+        let delay = 300; // 처음 깜빡임 속도 (500ms)
+
+        function randomFactor() {
+            // 0.75 ~ 0.85 사이의 무작위 값 반환
+            return 0.75 + Math.random() * 0.1;
+        }
 
         function blink() {
-            if (blinkCount < 4) {
-                typingTarget.classList.toggle("neon-off");
-            } else {
-                const isOff = typingTarget.classList.contains("neon-off");
+            const isOff = typingTarget.classList.contains("neon-off");
 
-                if (isOff) {
-                    typingTarget.classList.remove("neon-off");
-                    typingTarget.classList.add("neon-on");
-                } else {
-                    typingTarget.classList.remove("neon-on");
-                    typingTarget.classList.add("neon-off");
-                }
+            if (isOff) {
+                typingTarget.classList.remove("neon-off");
+                typingTarget.classList.add("neon-on");
+            } else {
+                typingTarget.classList.remove("neon-on");
+                typingTarget.classList.add("neon-off");
             }
 
             blinkCount++;
 
-            if (blinkCount < totalBlinks) {
-                delay *= 0.9;
+            if (blinkCount < maxBlinks * 2) {
+                delay *= randomFactor();  // 점점 빨라지되 천천히
                 setTimeout(blink, delay);
             } else {
-                // 마지막 네온 고정
                 typingTarget.classList.remove("neon-off");
                 typingTarget.classList.add("neon-on");
             }
