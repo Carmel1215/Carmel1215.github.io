@@ -1,4 +1,8 @@
 /* 1. 기본 설정 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -39,7 +43,7 @@ body {
 /* 3. 섹션 스타일 */
 section {
   width: 100%;
-  padding: 4rem 2rem; /* 좌우 여백 최소화 */
+  padding: 4rem 2rem;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -49,7 +53,6 @@ section {
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
   text-align: left;
-  margin: 0; /* 가운데 정렬용 margin 제거 */
 }
 
 section.visible {
@@ -67,10 +70,13 @@ section h2 {
 }
 
 section p,
-section li {
+section li,
+section a {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #f0f0f0;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* 4. 네비게이션 */
@@ -136,8 +142,8 @@ footer {
 #fact-output {
   display: block;
   width: max-content;
-  margin: 2rem auto; /* 위아래 여백 + 좌우 중앙 */
-  padding: 1rem 2rem;
+  margin: 2rem auto;
+  padding: 1rem 3rem;
   font-style: italic;
   background-color: #000;
   color: #ffcc00;
@@ -147,61 +153,10 @@ footer {
   text-shadow: 0 0 6px #ffcc00;
   font-size: 1.1rem;
   cursor: pointer;
+  animation: flicker 2s infinite;
 }
 
 @keyframes flicker {
   0%, 19%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
   20%, 24%, 55% { opacity: 0.4; }
-}
-
-/* 8. 반응형 설정 */
-@media (max-width: 768px) {
-  section {
-    padding: 3rem 1.5rem;
-  }
-
-  section h2 {
-    font-size: 1.6rem;
-  }
-
-  section p,
-  section li {
-    font-size: 1rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
-  }
-
-  #fact-output {
-    font-size: 1rem;
-    padding: 0.9rem 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  section {
-    padding: 2rem 1rem;
-  }
-
-  section h2 {
-    font-size: 1.4rem;
-  }
-
-  section p,
-  section li {
-    font-size: 0.95rem;
-  }
-
-  #fact-output {
-    font-size: 0.95rem;
-    padding: 0.8rem 1rem;
-  }
-
-  footer {
-    font-size: 0.9rem;
-    padding: 1.5rem;
-  }
 }
