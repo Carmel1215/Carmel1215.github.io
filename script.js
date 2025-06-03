@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const facts = [
         "저는 C#을 제일 좋아해요!",
-        "",
+        "저는 코딩을 스크래치로 접했어요!",
     ];
 
     let currentIndex = 0;
