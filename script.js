@@ -34,4 +34,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     greetingElement.textContent = greeting;
+
+    const typingText = "Carmel's Portfolio";
+    const typingTarget = document.getElementById("typing-target");
+    let typingIndex = 0;
+
+    function typeCharacter() {
+        if (typingIndex < typingText.length) {
+            typingTarget.textContent += typingText.charAt(typingIndex);
+            typingIndex++;
+            const delay = Math.random() * 100 + 50;
+            setTimeout(typeCharacter, delay);
+        } else {
+            startBlinking();
+        }
+    }
+
+    function startBlinking() {
+        let blinkCount = 0;
+        const totalBlinks = 16; // 4회 깜빡임 (on/off)
+        let delay = 300;
+
+        function blink() {
+            if (blinkCount < 4) {
+                typingTarget.classList.toggle("neon-off");
+            } else {
+                const isOff = typingTarget.classList.contains("neon-off");
+
+                if (isOff) {
+                    typingTarget.classList.remove("neon-off");
+                    typingTarget.classList.add("neon-on");
+                } else {
+                    typingTarget.classList.remove("neon-on");
+                    typingTarget.classList.add("neon-off");
+                }
+            }
+
+            blinkCount++;
+
+            if (blinkCount < totalBlinks) {
+                delay *= 0.9;
+                setTimeout(blink, delay);
+            } else {
+                // 마지막 네온 고정
+                typingTarget.classList.remove("neon-off");
+                typingTarget.classList.add("neon-on");
+            }
+        }
+
+        blink();
+    }
+
+    typeCharacter();
 });
