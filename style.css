@@ -1,101 +1,93 @@
 /* 1. 기본 설정 */
 body {
-    margin: 0;
-    padding: 0;
-    background: #0a0a0a;
-    color: #e0e0e0;
-    font-family: 'Inter', 'Noto Sans KR', 'Segoe UI', sans-serif;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+  color: #e0e0e0;
+  font-family: 'Inter', 'Noto Sans KR', 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* 2. 타이핑 애니메이션 */
-
 .neon-on {
-    color: #39ff14;
-    text-shadow:
-        0 0 5px #39ff14,
-        0 0 10px #39ff14,
-        0 0 20px #39ff14,
-        0 0 40px #39ff14;
-    transition: all 0.15s ease-in-out;
+  color: #39ff14;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 40px #39ff14;
+  transition: all 0.15s ease-in-out;
 }
 
 .neon-off {
-    color: #0a0a0a;
-    text-shadow: none;
-    transition: all 0.15s ease-in-out;
+  color: #0a0a0a;
+  text-shadow: none;
+  transition: all 0.15s ease-in-out;
 }
 
-/* 깜빡이는 애니메이션 */
 @keyframes flicker-on {
-    0%, 100% { opacity: 1; }
-    20%, 60% { opacity: 0.2; }
-    40%, 80% { opacity: 0.6; }
+  0%, 100% { opacity: 1; }
+  20%, 60% { opacity: 0.2; }
+  40%, 80% { opacity: 0.6; }
 }
 
 .flicker {
-    animation: flicker-on 0.6s ease-in-out;
+  animation: flicker-on 0.6s ease-in-out;
 }
 
-@keyframes blink-caret {
-    50% { border-color: transparent; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-/* 3. 섹션 스타일 (풀 너비 + 블러 + 네온 그림자) */
+/* 3. 섹션 스타일 */
 section {
-    width: 100%;
-    padding: 4rem 2rem;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+  width: 100%;
+  max-width: 960px;
+  padding: 4rem 2rem;
+  margin: 0 auto 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 section.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 section h2 {
-    font-size: 2rem;
-    color: #00ffff;
-    text-shadow: 0 0 8px #00ffff;
-    margin-bottom: 1rem;
-    border-left: 4px solid #00ffff;
-    padding-left: 0.75rem;
+  font-size: 2rem;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+  margin-bottom: 1rem;
+  border-left: 4px solid #00ffff;
+  padding-left: 0.75rem;
 }
 
 section p,
 section li {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #f0f0f0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #f0f0f0;
 }
 
 /* 4. 네비게이션 */
 header {
-    background: #0f0f0f;
-    padding: 2rem 1rem;
-    text-align: center;
+  background: #0f0f0f;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
 }
 
 nav li {
@@ -110,55 +102,107 @@ nav li.visible {
 }
 
 nav a {
-    color: #ff00ff;
-    font-weight: bold;
-    text-decoration: none;
-    text-shadow: 0 0 5px #ff00ff;
-    transition: text-shadow 0.3s;
+  color: #ff00ff;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 0 5px #ff00ff;
+  transition: text-shadow 0.3s;
 }
 
 nav a:hover {
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
 }
 
 /* 5. 리스트 */
 ul {
-    padding-left: 1.25rem;
+  padding-left: 1.25rem;
 }
 
 li {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* 6. footer */
 footer {
-    text-align: center;
-    padding: 2rem;
-    background: #111;
-    color: #00ffff;
-    font-size: 1rem;
-    text-shadow: 0 0 6px #00ffff;
+  text-align: center;
+  padding: 2rem;
+  background: #111;
+  color: #00ffff;
+  font-size: 1rem;
+  text-shadow: 0 0 6px #00ffff;
 }
 
 /* 7. fact 출력창 */
 #fact-output {
-    margin-top: 2rem;
-    background-color: #000;
-    color: #ffcc00;
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 10px #ffcc00;
-    text-shadow: 0 0 6px #ffcc00;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.1rem;
-    cursor: pointer;
-    animation: flicker 2s infinite;
+  margin-top: 2rem;
+  background-color: #000;
+  color: #ffcc00;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px #ffcc00;
+  text-shadow: 0 0 6px #ffcc00;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem;
+  cursor: pointer;
+  animation: flicker 2s infinite;
 }
 
 @keyframes flicker {
-    0%, 19%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
-    20%, 24%, 55% { opacity: 0.4; }
+  0%, 19%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.4; }
+}
+
+/* 8. 반응형 설정 */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+  }
+
+  section p,
+  section li {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  #fact-output {
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 2rem 1rem;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+  }
+
+  section p,
+  section li {
+    font-size: 0.95rem;
+  }
+
+  #fact-output {
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 1.5rem;
+  }
 }
