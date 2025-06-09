@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const facts = [
         "저는 C#을 제일 좋아해요!",
         "저는 코딩을 스크래치로 접했어요!",
+
     ];
 
     let currentIndex = 0;
@@ -54,11 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function startBlinking() {
         let blinkCount = 0;
         const maxBlinks = 10;
-        let delay = 300; // 처음 깜빡임 속도 (500ms)
+        let delay = 300; // 처음 깜빡임 속도 (300ms)
 
         function randomFactor() {
-            // 0.75 ~ 0.85 사이의 무작위 값 반환
-            return 0.75 + Math.random() * 0.1;
+            // 0.8 ~ 0.81 사이의 무작위 값 반환
+            return 0.8 + Math.random() * 0.01;
         }
 
         function blink() {
