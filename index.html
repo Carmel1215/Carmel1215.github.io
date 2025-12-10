@@ -1,76 +1,112 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico">
-    <title>Carmel's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-    <script defer src="script.js"></script>
+    <title>Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
+<body class="bg-white text-dark">
 
-<body>
-    <header>
-        <h1 id="typing-target"></h1>
-        <nav>
-            <ul>
-                <li><a href="#about">소개</a></li>
-                <li><a href="#projects">프로젝트</a></li>
-                <li><a href="#contact">연락처</a></li>
-                <li><a href="#fun-facts">Fun Facts</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- HEADER -->
+<header class="border-bottom py-4 mb-5 bg-white">
+    <div class="container text-center">
+        <h1 class="h2 fw-semibold m-0">Carmel1215</h1>
+    </div>
+</header>
 
-    <main>
-        <section id="about">
-            <h2>소개</h2>
-            <p id="greeting"></p>
-            <p>안녕하세요! 여러 분야를 체험하고 있는 고등학생 개발자에요.</p>
-            <p>현재는 Kotlin과 C#을 중심으로 앱 개발과 웹 개발을 공부하고 있고 작은 프로젝트 여러 개를 진행하고 있어요.</p>
-        </section>
+<main class="container">
 
-        <section id="projects">
-            <h2>프로젝트</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Playground Reservation</h3>
-                    <p>학교 운동장 예약을 위한 PHP + MySQL 기반 웹 앱.</p>
-                    <p class="stack">PHP MySQL HTML/CSS</p>
-                </div>
-                <div class="project-card">
-                    <h3>Pytimer</h3>
-                    <p>Python으로 만든 함수 시간 측정 타이머.</p>
-                    <p class="stack">Python</p>
-                    <a href="https://github.com/Carmel1215/Pytimer" target="_blank">Github Link</a>
-                </div>
-                <div class="project-card">
-                    <h3>Beneath (진행 중)</h3>
-                    <p>Pygame으로 만든 퍼즐 게임.</p>
-                    <p class="stack">Python, Pygame</p>
-                    <a href="https://github.com/Carmel1215/Beneath" target="_blank">Github Link</a>
-                </div>
+    <!-- ABOUT -->
+    <section id="about" class="mb-5">
+        <h2 class="h4 fw-bold mb-3">About</h2>
+
+        <p class="about-name fw-semibold mb-1">
+            김태환 <span class="text-muted fw-normal">Student Developer</span>
+        </p>
+
+        <p class="about-bio text-muted">
+            대충 설명
+        </p>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="mb-5">
+        <h2 class="h4 fw-bold mb-3">Stack</h2>
+
+        <div class="row">
+
+            <div class="col-md-6 mb-4">
+                <h3 class="h6 fw-semibold mb-2 text-secondary">Languages</h3>
+                <ul class="list-unstyled small">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
             </div>
-        </section>
 
-        <section id="contact">
-            <h2>연락처</h2>
-            <p>Email: me@carmel1215.me</p>
-            <p>GitHub: <a href="https://github.com/Carmel1215" target="_blank">Carmel1215</a></p>
-            <p>Discord: carmel1215</p>
-        </section>
+            <div class="col-md-6 mb-4">
+                <h3 class="h6 fw-semibold mb-2 text-secondary">Frameworks &amp; Tools</h3>
+                <ul class="list-unstyled small">
+                    <li>React</li>
+                    <li>Redux</li>
+                    <li>Vue</li>
+                </ul>
+            </div>
 
-        <section id="fun-facts">
-            <h2>Fun Facts</h2>
-            <p id="fact-output">저를 눌러보세요!</p>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Carmel1215. All rights reserved.</p>
-    </footer>
+    <!-- PROJECTS -->
+    <section id="projects" class="mb-5">
+        <h2 class="h4 fw-bold mb-4">Projects</h2>
+
+        <div class="d-flex flex-column gap-4">
+
+            <!-- Project Card 1 -->
+            <article class="pb-3 border-bottom">
+                <h3 class="h5 fw-semibold mb-1">Sokoban Unity Game</h3>
+                <p class="text-muted small mb-2">대충 설명</p>
+                <p class="mb-2 small">프로젝트 설명 들어갈 자리.</p>
+                <a href="#" class="link-primary small" target="_blank">Github 보기</a>
+            </article>
+
+            <!-- Project Card 2 -->
+            <article class="pb-3 border-bottom">
+                <h3 class="h5 fw-semibold mb-1">Sokoban Unity Game</h3>
+                <p class="text-muted small mb-2">대충 설명</p>
+                <p class="mb-2 small">프로젝트 설명 들어갈 자리.</p>
+                <a href="#" class="link-primary small" target="_blank">Github 보기</a>
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-top mt-5 py-4">
+    <div class="container text-center">
+
+        <nav class="mb-2">
+            <a href="https://github.com/Carmel1215"
+               target="_blank"
+               class="text-decoration-none link-dark fw-semibold">
+                Github
+            </a>
+        </nav>
+
+        <p class="small text-muted mb-0">
+            <span>저자: Carmel1215</span><br/>
+            <span>email: me@carmel1215.me</span><br/>
+            <span>&copy; 2025. Carmel1215. All Rights Reserved.</span>
+        </p>
+
+    </div>
+</footer>
+
 </body>
-
 </html>
